@@ -1,0 +1,27 @@
+{
+  "name": "rollup-plugin-typescript-path-mapping",
+  "version": "1.0.0",
+  "description": "Resolving module path which applies typescript's path mapping rule",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mutefish0/rollup-plugin-typescript-path-mapping.git"
+  },
+  "keywords": [
+    "rollup",
+    "rollup-plugin",
+    "resolve",
+    "alias",
+    "typescript",
+    "path-mapping"
+  ],
+  "author": "Ivan Cheng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mutefish0/rollup-plugin-typescript-path-mapping/issues"
+  },
+  "homepage": "https://github.com/Mutefish0/rollup-plugin-typescript-path-mapping#readme"
+}
