@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-typescript-path-mapping",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Resolving module path which applies typescript's path mapping rule",
   "main": "index.js",
   "scripts": {
