@@ -1,8 +1,9 @@
 {
   "name": "rollup-plugin-typescript-path-mapping",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Resolving module path which applies typescript's path mapping rule",
   "main": "index.js",
+  "module": "index.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

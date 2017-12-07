@@ -13,23 +13,25 @@ let exts = ['.js', '.json']
 
 module.exports = function (options) {
     options = options || {}
+
     let compilerOptions
     if (options.tsconfig) {
         compilerOptions = JSON.parse(fs.readFileSync('tsconfig.json')).compilerOptions
     }
+
     let paths = compilerOptions && compilerOptions.paths || options.paths
     let baseUrl = compilerOptions && compilerOptions.baseUrl || options.baseUrl
-    let redirectDir = compilerOptions && compilerOptions.outDir || options.redirectDir
+    let outDir = compilerOptions && compilerOptions.outDir || options.outDir
+    let rootDir = compilerOptions && compilerOptions.rootDir || options.rootDir
 
-    let redirectDirSuffixRe = new RegExp(reEscape(redirectDir) + '$')
-    let redirectReplaceRe = new RegExp([
-        '^(',
-        reEscape(path.resolve(redirectDir).replace(redirectDirSuffixRe, '')),
-        ')[^/]*\/'
-    ].join(''))
+    if (!(paths && baseUrl && outDir && rootDir)) {
+        throw new Error('rollup-plugin-typescript-path-mapping: both `paths`, `baseUrl`, `outDir`, `rootDir` are required, in plugin\'s options or tsconfig\'s compilerOptions.')
+    }
 
-    function redirecToDir(path) {
-        return path.replace(redirectReplaceRe, '$1' + redirectDir.replace(/([^/])$/, '$1/'))
+    let rootDirPrefixRe = new RegExp(reEscape(path.resolve(rootDir)))
+
+    function redirecToDir(modulePath) {
+        return modulePath.replace(rootDirPrefixRe, path.resolve(outDir))
     }
 
     return {

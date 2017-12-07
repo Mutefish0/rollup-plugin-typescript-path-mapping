@@ -33,6 +33,7 @@ there is some path mapping rules configured in `tsconfig.json`
             "util/*": ["src/common/util/*"],
         },
         "outDir": "dist",
+        "rootDir": "src",
         "module": "es2015",
         "target": "es2015"
     }
@@ -53,12 +54,13 @@ module.exports = {
         format: 'iife'
     },
     plugins: [rollupPluginTypescriptPathMapping({
-       baseUrl: './',
-       paths: {
+        baseUrl: './',
+        paths: {
             'base/*': ['src/base/*'],
             'util/*': ['src/common/util/*'],
         },
-        redirectDir: 'dist'
+        outDir: 'dist',
+        rootDir: 'src'
     })]
 }
 ```
