@@ -1,4 +1,6 @@
 # rollup-plugin-typescript-path-mapping
+**DEPRECATED, use [rollup-plugin-typescript](https://github.com/rollup/rollup-plugin-typescript) instead.**
+
 Resolving module path which  applies typescript's path mapping rule, see `Path mapping` in [official doc](http://www.typescriptlang.org/docs/handbook/module-resolution.html)
 
 ## why?
