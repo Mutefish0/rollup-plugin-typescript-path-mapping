@@ -9,7 +9,7 @@ function isRelativeModuleId(id) {
     return /^\.+\//.test(id)
 }
 
-let exts = ['.js', '.json']
+let exts = ['.js', '.json', '/index.js']
 
 module.exports = function (options) {
     options = options || {}
